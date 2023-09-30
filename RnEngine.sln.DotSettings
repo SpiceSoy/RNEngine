@@ -1,0 +1,21 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:Boolean x:Key="/Default/CodeStyle/EditorConfig/EnableClangFormatSupport/@EntryValue">False</s:Boolean>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=47A648F0E69A5F41B870878F2034EE7E/@KeyIndexDefined">True</s:Boolean>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=47A648F0E69A5F41B870878F2034EE7E/Applicability/=Live/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=47A648F0E69A5F41B870878F2034EE7E/Field/=FILE_005FHEADER/@KeyIndexDefined">True</s:Boolean>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=47A648F0E69A5F41B870878F2034EE7E/Field/=FILE_005FHEADER/Expression/@EntryValue">cppFileheader()</s:String>
+	<s:Int64 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=47A648F0E69A5F41B870878F2034EE7E/Field/=FILE_005FHEADER/Order/@EntryValue">0</s:Int64>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=47A648F0E69A5F41B870878F2034EE7E/Reformat/@EntryValue">True</s:Boolean>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=47A648F0E69A5F41B870878F2034EE7E/Shortcut/@EntryValue">FILE_HEADER</s:String>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=47A648F0E69A5F41B870878F2034EE7E/ShortenQualifiedReferences/@EntryValue">True</s:Boolean>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=47A648F0E69A5F41B870878F2034EE7E/Text/@EntryValue">$FILE_HEADER$</s:String>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=47A648F0E69A5F41B870878F2034EE7E/Field/=CREATED_005FDAY/@KeyIndexDefined">False</s:Boolean>
+	
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=47A648F0E69A5F41B870878F2034EE7E/Field/=CREATED_005FMONTH/@KeyIndexDefined">False</s:Boolean>
+	
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=47A648F0E69A5F41B870878F2034EE7E/Field/=CREATED_005FYEAR/@KeyIndexDefined">False</s:Boolean>
+	
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=47A648F0E69A5F41B870878F2034EE7E/Field/=FILENAME/@KeyIndexDefined">False</s:Boolean>
+	
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=47A648F0E69A5F41B870878F2034EE7E/Scope/=F6696F8185506F41B9C4252540BE9C18/@KeyIndexDefined">True</s:Boolean>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=47A648F0E69A5F41B870878F2034EE7E/Scope/=F6696F8185506F41B9C4252540BE9C18/Type/@EntryValue">InCppFile</s:String></wpf:ResourceDictionary>
