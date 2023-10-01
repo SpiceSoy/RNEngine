@@ -1,16 +1,16 @@
 // ================================================================================================
-//   @file EngineSetting.h
+//   @file Property.h
 //  
 //   @brief 
 //   
 //   @date 2023/10/01
 // ================================================================================================
-
 #pragma once
 
 namespace Rn
 {
-	struct FEngineSetting
+	template < typename Ty >
+	struct TProperty
 	{
 	};
 }

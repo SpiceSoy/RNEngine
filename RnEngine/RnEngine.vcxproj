@@ -77,19 +77,24 @@
         </Link>
     </ItemDefinitionGroup>
     <ItemGroup>
+        <Folder Include="Source\Core\System\"/>
         <Folder Include="Source\Game\" />
         <Folder Include="Source\Renderer\D3D12\" />
     </ItemGroup>
     <ItemGroup>
-        <ClInclude Include="Source\Core\Common\BaseDelegate.h" />
-        <ClInclude Include="Source\Core\Common\EventSender.h" />
-        <ClInclude Include="Source\Core\Common\EventSystem.h" />
         <ClInclude Include="Source\Core\Common\GlobalMacro.h" />
         <ClInclude Include="Source\Core\Common\IDGenerator.h" />
         <ClInclude Include="Source\Core\Common\IDWrapper.h" />
         <ClInclude Include="Source\Core\Common\Singleton.h" />
         <ClInclude Include="Source\Core\Common\Vector.h" />
         <ClInclude Include="Source\Core\Engine\RnEngine.h" />
+        <ClInclude Include="Source\Core\System\Event\BaseDelegate.h"/>
+        <ClInclude Include="Source\Core\System\Event\EventSender.h"/>
+        <ClInclude Include="Source\Core\System\Event\EventSystem.h"/>
+        <ClInclude Include="Source\Core\System\Property\BaseProperty.h"/>
+        <ClInclude Include="Source\Core\System\Property\Property.h"/>
+        <ClInclude Include="Source\Core\System\Property\PropertyContainer.h"/>
+        <ClInclude Include="Source\Core\System\Serialize\SerializeContext.h"/>
         <ClInclude Include="Source\Platform\Core\PlatformDefine.h" />
         <ClInclude Include="Source\Platform\Windows\Resource.h"/>
         <ClInclude Include="Source\Platform\Windows\WindowsEntry.h"/>
@@ -100,6 +105,9 @@
     </ItemGroup>
     <ItemGroup>
         <ClCompile Include="Source\Core\Engine\RnEngine.cpp" />
+        <ClCompile Include="Source\Core\System\Property\BaseProperty.cpp"/>
+        <ClCompile Include="Source\Core\System\Property\PropertyContainer.cpp"/>
+        <ClCompile Include="Source\Core\System\Serialize\SerializeContext.cpp"/>
         <ClCompile Include="Source\Platform\Windows\WindowsEntry.cpp"/>
         <ClCompile Include="Source\Renderer\Core\RenderCore.cpp" />
         <ClCompile Include="Source\Renderer\Core\RenderSetting.cpp" />

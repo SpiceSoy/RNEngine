@@ -7,7 +7,7 @@
 // ================================================================================================
 #pragma once
 
-#include "Core/Common/BaseDelegate.h"
+#include "Core/System/Event/BaseDelegate.h"
 #include "Core/Common/GlobalMacro.h"
 #include <map>
 #include <functional>

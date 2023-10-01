@@ -1,12 +1,4 @@
-﻿// ================================================================================================
-//   @file RnEngine.cpp
-//
-//   @brief
-//
-//   @date 2023/09/29
-// ================================================================================================
-
-#include "WindowsEntry.h"
+﻿#include "WindowsEntry.h"
 #include "Platform/Windows/WindowsCommons.h"
 
 #define MAX_LOADSTRING 100
