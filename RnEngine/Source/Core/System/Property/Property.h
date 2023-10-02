@@ -17,7 +17,7 @@ namespace Rn
 
 
 	template < typename ValueTy >
-	struct TBaseProperty : FBaseProperty
+	struct TBaseProperty : public FBaseProperty
 	{
 		friend struct TPropertyMutator< ValueTy >;
 
@@ -86,7 +86,7 @@ namespace Rn
 
 
 	template < typename ValueTy >
-	struct TProperty : TBaseProperty< ValueTy >
+	struct TProperty : public TBaseProperty< ValueTy >
 	{
 	public:
 		TPropertyMutator< ValueTy > GetMutator()

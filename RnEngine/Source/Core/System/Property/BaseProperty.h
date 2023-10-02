@@ -11,11 +11,6 @@
 namespace Rn
 {
 	class FPropertyContainer;
-}
-
-
-namespace Rn
-{
 	class ISerializeContext;
 }
 

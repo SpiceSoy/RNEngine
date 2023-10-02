@@ -78,16 +78,16 @@
     </ItemDefinitionGroup>
     <ItemGroup>
         <Folder Include="Source\Core\System\"/>
-        <Folder Include="Source\Game\" />
-        <Folder Include="Source\Renderer\D3D12\" />
+        <Folder Include="Source\Game\"/>
+        <Folder Include="Source\Renderer\D3D12\"/>
     </ItemGroup>
     <ItemGroup>
-        <ClInclude Include="Source\Core\Common\GlobalMacro.h" />
-        <ClInclude Include="Source\Core\Common\IDGenerator.h" />
-        <ClInclude Include="Source\Core\Common\IDWrapper.h" />
-        <ClInclude Include="Source\Core\Common\Singleton.h" />
-        <ClInclude Include="Source\Core\Common\Vector.h" />
-        <ClInclude Include="Source\Core\Engine\RnEngine.h" />
+        <ClInclude Include="Source\Core\Common\GlobalMacro.h"/>
+        <ClInclude Include="Source\Core\Common\IDGenerator.h"/>
+        <ClInclude Include="Source\Core\Common\IDWrapper.h"/>
+        <ClInclude Include="Source\Core\Common\Singleton.h"/>
+        <ClInclude Include="Source\Core\Common\Vector.h"/>
+        <ClInclude Include="Source\Core\Engine\RnEngine.h"/>
         <ClInclude Include="Source\Core\System\Event\BaseDelegate.h"/>
         <ClInclude Include="Source\Core\System\Event\EventSender.h"/>
         <ClInclude Include="Source\Core\System\Event\EventSystem.h"/>
@@ -96,24 +96,24 @@
         <ClInclude Include="Source\Core\System\Property\PropertyContainer.h"/>
         <ClInclude Include="Source\Core\System\Serialize\SerializeContext.h"/>
         <ClInclude Include="Source\Platform\Core\PlatformContext.h"/>
-        <ClInclude Include="Source\Platform\Core\PlatformDefine.h" />
+        <ClInclude Include="Source\Platform\Core\PlatformDefine.h"/>
         <ClInclude Include="Source\Platform\Windows\Resource.h"/>
         <ClInclude Include="Source\Platform\Windows\WindowsEntry.h"/>
         <ClInclude Include="Source\Platform\Windows\WindowsCommons.h"/>
         <ClInclude Include="Source\Platform\Windows\WindowsPlatformContext.h"/>
         <ClInclude Include="Source\Platform\Windows\WindowsTargetVer.h"/>
-        <ClInclude Include="Source\Renderer\Core\RenderCore.h" />
-        <ClInclude Include="Source\Renderer\Core\RenderSetting.h" />
+        <ClInclude Include="Source\Renderer\Core\RenderCore.h"/>
+        <ClInclude Include="Source\Renderer\Core\RenderSetting.h"/>
     </ItemGroup>
     <ItemGroup>
-        <ClCompile Include="Source\Core\Engine\RnEngine.cpp" />
+        <ClCompile Include="Source\Core\Engine\RnEngine.cpp"/>
         <ClCompile Include="Source\Core\System\Property\BaseProperty.cpp"/>
         <ClCompile Include="Source\Core\System\Property\PropertyContainer.cpp"/>
         <ClCompile Include="Source\Core\System\Serialize\SerializeContext.cpp"/>
         <ClCompile Include="Source\Platform\Windows\WindowsEntry.cpp"/>
         <ClCompile Include="Source\Platform\Windows\WindowsPlatformContext.cpp"/>
-        <ClCompile Include="Source\Renderer\Core\RenderCore.cpp" />
-        <ClCompile Include="Source\Renderer\Core\RenderSetting.cpp" />
+        <ClCompile Include="Source\Renderer\Core\RenderCore.cpp"/>
+        <ClCompile Include="Source\Renderer\Core\RenderSetting.cpp"/>
     </ItemGroup>
     <ItemGroup>
         <Image Include="Source\Platform\Windows\RnEngine.ico"/>
@@ -123,7 +123,7 @@
         <ResourceCompile Include="Source\Platform\Windows\RnEngine.rc"/>
     </ItemGroup>
     <ItemGroup>
-      <ClInclude Include="Source\Core\Engine\EngineSetting.h" />
+        <ClInclude Include="Source\Core\Engine\EngineSetting.h"/>
     </ItemGroup>
     <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets"/>
     <ImportGroup Label="ExtensionTargets">

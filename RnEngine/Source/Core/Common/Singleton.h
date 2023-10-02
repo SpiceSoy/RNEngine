@@ -48,11 +48,11 @@ namespace Rn
 	//! @brief
 	//! @tparam
 	//----------------------------------------------------------------------
-	export template < typename Ty >
+	template < typename Ty >
 	class TBaseSingleton
 	{
 	private:
-		inline static std::unique_ptr< Ty >* instancePtr;
+		inline static std::unique_ptr< Ty > instancePtr;
 
 	protected:
 		TBaseSingleton()
@@ -71,10 +71,10 @@ namespace Rn
 		{
 			if ( instancePtr == nullptr )
 			{
-				instancePtr = new Ty*();
+				instancePtr = std::make_unique< Ty >();
 			}
 
-			return instancePtr;
+			return instancePtr.get();
 		}
 
 		//----------------------------------------------------------------------
@@ -85,7 +85,7 @@ namespace Rn
 		{
 			if ( instancePtr == nullptr )
 			{
-				instancePtr = new Ty*();
+				instancePtr = std::make_unique< Ty >();
 			}
 
 			return *instancePtr;

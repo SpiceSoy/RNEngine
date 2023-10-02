@@ -12,5 +12,6 @@ namespace Rn
 {
 	struct FEngineSetting
 	{
+		bool IsConsoleMode = false;
 	};
 }

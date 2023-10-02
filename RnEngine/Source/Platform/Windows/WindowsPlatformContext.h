@@ -12,7 +12,7 @@
 
 namespace Rn
 {
-	class WindowsPlatformContext : IPlatformContext
+	class WindowsPlatformContext : public IPlatformContext
 	{
 	public:
 	};

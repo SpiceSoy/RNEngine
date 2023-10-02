@@ -7,10 +7,10 @@
 // ================================================================================================
 #pragma once
 
-#include "Core/System/Event/BaseDelegate.h"
 #include "Core/Common/GlobalMacro.h"
-#include <map>
+#include "Core/System/Event/BaseDelegate.h"
 #include <functional>
+#include <map>
 
 
 namespace Rn
@@ -22,7 +22,7 @@ namespace Rn
 	//! @tparam
 	//----------------------------------------------------------------------
 	export template < typename Ty1 = void, typename Ty2 = void, typename Ty3 = void, typename Ty4 = void >
-	class TBaseEvent : public Rn::IRnType
+	class TBaseEvent : public IRnType
 	{
 		DECLARE_RN_TYPE( TBaseEvent )
 
