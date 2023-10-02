@@ -10,21 +10,35 @@
 
 namespace Rn
 {
+	class FPropertyContainer;
+}
+
+
+namespace Rn
+{
+	class ISerializeContext;
+}
+
+
+namespace Rn
+{
 	class FBaseProperty
 	{
 	public:
+		FBaseProperty( FPropertyContainer* InContainer );
+
 		virtual ~FBaseProperty() = default;
 
-		virtual void Serialize();
+		virtual void Serialize( ISerializeContext* InContext );
 
-		virtual void Deserialize();
+		virtual void Deserialize( ISerializeContext* InContext );
 
-		virtual void NotifyChange();
+		virtual void NotifyPropertyChanged();
 
 	protected:
-		virtual void OnSerialize() = 0;
+		virtual void OnSerialize( ISerializeContext* InContext ) = 0;
 
-		virtual void OnDeserialize() = 0;
+		virtual void OnDeserialize( ISerializeContext* InContext ) = 0;
 
 		virtual void OnPropertyChanged() = 0;
 	};

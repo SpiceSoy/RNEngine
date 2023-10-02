@@ -7,6 +7,10 @@
 // ================================================================================================
 #pragma once
 
+#define PLATFORM_WIN
+
+#ifdef PLATFORM_WIN
+
 using int8 = __int8;
 using int16 = __int16;
 using int32 = __int32;
@@ -18,3 +22,5 @@ using uint32 = unsigned __int32;
 using uint64 = unsigned __int64;
 
 using single = float;
+
+#endif

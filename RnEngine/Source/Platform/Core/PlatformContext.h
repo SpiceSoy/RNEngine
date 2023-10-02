@@ -1,18 +1,17 @@
 ﻿// ================================================================================================
-//   @file RnEngine.h
+//   @file PlatformContext.h
 //  
 //   @brief 
 //   
-//   @date 2023/10/01
+//   @date 2023/10/02
 // ================================================================================================
 
 #pragma once
 
 namespace Rn
 {
-	class RnEngine
+	class IPlatformContext
 	{
 	public:
-		void Initialize()
 	};
 }

@@ -10,7 +10,7 @@
 
 namespace Rn
 {
-	class SerializeContext
+	class ISerializeContext
 	{
 	public:
 	};

@@ -95,10 +95,12 @@
         <ClInclude Include="Source\Core\System\Property\Property.h"/>
         <ClInclude Include="Source\Core\System\Property\PropertyContainer.h"/>
         <ClInclude Include="Source\Core\System\Serialize\SerializeContext.h"/>
+        <ClInclude Include="Source\Platform\Core\PlatformContext.h"/>
         <ClInclude Include="Source\Platform\Core\PlatformDefine.h" />
         <ClInclude Include="Source\Platform\Windows\Resource.h"/>
         <ClInclude Include="Source\Platform\Windows\WindowsEntry.h"/>
         <ClInclude Include="Source\Platform\Windows\WindowsCommons.h"/>
+        <ClInclude Include="Source\Platform\Windows\WindowsPlatformContext.h"/>
         <ClInclude Include="Source\Platform\Windows\WindowsTargetVer.h"/>
         <ClInclude Include="Source\Renderer\Core\RenderCore.h" />
         <ClInclude Include="Source\Renderer\Core\RenderSetting.h" />
@@ -109,6 +111,7 @@
         <ClCompile Include="Source\Core\System\Property\PropertyContainer.cpp"/>
         <ClCompile Include="Source\Core\System\Serialize\SerializeContext.cpp"/>
         <ClCompile Include="Source\Platform\Windows\WindowsEntry.cpp"/>
+        <ClCompile Include="Source\Platform\Windows\WindowsPlatformContext.cpp"/>
         <ClCompile Include="Source\Renderer\Core\RenderCore.cpp" />
         <ClCompile Include="Source\Renderer\Core\RenderSetting.cpp" />
     </ItemGroup>

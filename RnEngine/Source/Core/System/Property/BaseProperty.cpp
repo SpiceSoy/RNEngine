@@ -1,13 +1,25 @@
 ﻿#include "BaseProperty.h"
+#include "Core/System/Property/PropertyContainer.h"
 
-void Rn::FBaseProperty::Serialize()
+Rn::FBaseProperty::FBaseProperty( FPropertyContainer* InContainer )
 {
+	if ( InContainer )
+	{
+		InContainer->AddProperty( *this );
+	}
 }
 
-void Rn::FBaseProperty::Deserialize()
+void Rn::FBaseProperty::Serialize( ISerializeContext* InContext )
 {
+	OnSerialize( InContext );
 }
 
-void Rn::FBaseProperty::NotifyChange()
+void Rn::FBaseProperty::Deserialize( ISerializeContext* InContext )
 {
+	OnDeserialize( InContext );
+}
+
+void Rn::FBaseProperty::NotifyPropertyChanged()
+{
+	OnPropertyChanged();
 }
