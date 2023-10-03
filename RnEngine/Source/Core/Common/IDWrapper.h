@@ -14,7 +14,8 @@
 
 namespace Rn
 {
-	template < class Ty, Ty InvalidValue = 0 > requires Rn::Concept::IsIdType< Ty >
+	// ID 하드타입용 래퍼 클래스
+	template < class Ty, Ty InvalidValue = 0 > requires Rn::Concept::IsIDType< Ty >
 	class TIDWrapper
 	{
 	private:
@@ -24,39 +25,25 @@ namespace Rn
 		static constexpr Ty InvalidID = InvalidValue;
 
 	public:
-		//----------------------------------------------------------------------
-		//! @brief
-		//! @param InId
-		//----------------------------------------------------------------------
+		// 생성자
 		explicit TIDWrapper( Ty InId )
 			: ID( InId )
 		{
 		}
 
-		//----------------------------------------------------------------------
-		//! @brief
-		//! @return
-		//----------------------------------------------------------------------
+		// ID Raw 값을 반환한다.
 		Ty GetValue() const
 		{
 			return ID;
 		}
 
-		//----------------------------------------------------------------------
-		//! @brief
-		//! @param InRhs
-		//! @return
-		//----------------------------------------------------------------------
+		// == 연산자 오버로딩
 		bool operator==( const TIDWrapper& InRhs ) const
 		{
 			return ID == InRhs.ID;
 		}
 
-		//----------------------------------------------------------------------
-		//! @brief
-		//! @param InRhs
-		//! @return
-		//----------------------------------------------------------------------
+		// = 연산자 오버로딩
 		TIDWrapper& operator=( const TIDWrapper& InRhs ) const
 		{
 			ID = InRhs;
@@ -64,10 +51,7 @@ namespace Rn
 			return *this;
 		}
 
-		//----------------------------------------------------------------------
-		//! @brief
-		//! @return
-		//----------------------------------------------------------------------
+		// null 아이디를 반환한다.
 		TIDWrapper GetInvalidID() const
 		{
 			return TIDWrapper( InvalidValue );

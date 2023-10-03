@@ -82,10 +82,10 @@
         <Folder Include="Source\Renderer\D3D12\"/>
     </ItemGroup>
     <ItemGroup>
+        <ClInclude Include="Source\Core\Common\BaseSingleton.h"/>
         <ClInclude Include="Source\Core\Common\GlobalMacro.h"/>
         <ClInclude Include="Source\Core\Common\IDGenerator.h"/>
         <ClInclude Include="Source\Core\Common\IDWrapper.h"/>
-        <ClInclude Include="Source\Core\Common\Singleton.h"/>
         <ClInclude Include="Source\Core\Common\Vector.h"/>
         <ClInclude Include="Source\Core\Engine\RnEngine.h"/>
         <ClInclude Include="Source\Core\System\Event\BaseDelegate.h"/>

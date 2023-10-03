@@ -12,11 +12,8 @@
 
 namespace Rn
 {
-	//----------------------------------------------------------------------
-	//! @brief FVector2D
-	//! @tparam Ty 각 원소에서 사용할 타입
-	//----------------------------------------------------------------------
-	export template < typename Ty >
+	// Ty타입에 대한 2D 벡터 클래스입니다.
+	template < typename Ty >
 	struct FVector2D
 	{
 		using ThisType = FVector2D< Ty >;
@@ -94,13 +91,13 @@ namespace Rn
 	};
 
 
-	//----------------------------------------------------------------------
-	//! @brief
-	//! @tparam Ty
-	//----------------------------------------------------------------------
+	// Ty타입에 대한 3D 벡터 클래스입니다.
 	export template < typename Ty >
 	struct FVector3D
 	{
+		using ThisType = FVector3D< Ty >;
+
+
 		union
 		{
 			FVector2D< Ty > Vector2D;
@@ -115,23 +112,106 @@ namespace Rn
 
 
 		Ty Z;
+
+		FVector3D()
+			: X( 0 ),
+			  Y( 0 ),
+			  Z( 0 )
+		{
+		}
+
+		FVector3D( Ty X, Ty Y, Ty Z )
+			: X( X ),
+			  Y( Y ),
+			  Z( Z )
+		{
+		}
+
+		FVector3D( const FVector3D& InVector3D )
+			: FVector3D( InVector3D.X, InVector3D.Y, InVector3D.Z )
+		{
+		}
+
+		FVector3D( FVector3D&& InVector3D ) noexcept
+			: FVector3D( InVector3D.X, InVector3D.Y, InVector3D.Z )
+		{
+			InVector3D.SetX( 0 );
+			InVector3D.SetY( 0 );
+			InVector3D.SetZ( 0 );
+		}
+
+		void SetX( Ty X )
+		{
+			this->X = X;
+		}
+
+		void SetY( Ty Y )
+		{
+			this->Y = Y;
+		}
+
+		void SetZ( Ty Z )
+		{
+			this->Z = Z;
+		}
+
+		ThisType operator+( const ThisType& InOther ) const
+		{
+			return ThisType( X + InOther.X, Y + InOther.Y );
+		}
+
+		ThisType& operator+=( const ThisType& InOther )
+		{
+			return *this = this->operator+( InOther );
+		}
+
+		template < typename Ty2 > requires Concept::IsArithmetic< Ty2 >
+		ThisType operator*( const Ty2& InValue )
+		{
+			return ThisType( this->X * InValue, this->Y * InValue );
+		}
+
+		template < typename Ty2 > requires Concept::IsArithmetic< Ty2 >
+		ThisType& operator*=( const Ty2& InValue )
+		{
+			return *this = this->operator*( InValue );
+		}
+
+		template < typename Ty2 > requires Concept::IsArithmetic< Ty2 >
+		ThisType operator/( const Ty2& InValue )
+		{
+			return ThisType( this->X / InValue, this->Y / InValue );
+		}
+
+		template < typename Ty2 > requires Concept::IsArithmetic< Ty2 >
+		ThisType& operator/=( const Ty2& InValue )
+		{
+			return *this = this->operator/( InValue );
+		}
 	};
 
 
-	//
-	export using FVector2DI = FVector2D< int32 >;
-	//
-	export using FVector2DU = FVector2D< uint32 >;
-	//
-	export using FVector3DI = FVector3D< int32 >;
-	//
-	export using FVector3DU = FVector3D< uint32 >;
-	//
-	export using FVector2DS = FVector2D< single >;
-	//
-	export using FVector3DS = FVector3D< single >;
-	//
-	export using FVector2DD = FVector2D< double >;
-	//
-	export using FVector3DD = FVector3D< double >;
+	// int32 타입에 대한 2D 벡터 클래스입니다.
+	using FVector2DI = FVector2D< int32 >;
+
+	// uint32 타입에 대한 2D 벡터 클래스입니다.
+	using FVector2DU = FVector2D< uint32 >;
+
+	// int32 타입에 대한 3D 벡터 클래스입니다.
+	using FVector3DI = FVector3D< int32 >;
+
+	// uint32 타입에 대한 3D 벡터 클래스입니다.
+	using FVector3DU = FVector3D< uint32 >;
+
+	// float 타입에 대한 2D 벡터 클래스입니다.
+	using FVector2DS = FVector2D< single >;
+
+	// float 타입에 대한 3D 벡터 클래스입니다.
+	using FVector3DS = FVector3D< single >;
+
+	// double 타입에 대한 2D 벡터 클래스입니다.
+	using FVector2DD = FVector2D< double >;
+
+	// double 타입에 대한 3D 벡터 클래스입니다.
+	using FVector3DD = FVector3D< double >;
 }

@@ -80,7 +80,7 @@ int APIENTRY wWinMain( _In_ HINSTANCE     hInstance,
 			engine.Tick();
 		}
 
-		engine.Finalize();
+		engine.OnClose();
 
 		return 0;
 	}
@@ -104,7 +104,7 @@ int APIENTRY wWinMain( _In_ HINSTANCE     hInstance,
 		}
 	}
 
-	engine.Finalize();
+	engine.OnClose();
 
 	return static_cast< int >(msg.wParam);
 }

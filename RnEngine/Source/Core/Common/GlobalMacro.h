@@ -11,9 +11,7 @@
 #include "Platform/Core/PlatformDefine.h"
 #include <string_view>
 
-//----------------------------------------------------------------------
 // 타입 관련
-//----------------------------------------------------------------------
 namespace Rn
 {
 	class IRnType;
@@ -116,16 +114,14 @@ namespace Rn
 #define IMPLEMENT_RN_OBJECT( TYPE ) \
 	Rn::FClassName Rn::TClassName< TYPE >::_className = #TYPE;
 
-//----------------------------------------------------------------------
 // 콘셉트
-//----------------------------------------------------------------------
 namespace Rn::Concept
 {
 	template < typename Ty >
 	concept IsArithmetic = std::is_arithmetic_v< Ty > == true;
 
 	template < typename Ty >
-	concept IsIdType = std::is_integral_v< Ty > == true;
+	concept IsIDType = std::is_integral_v< Ty > == true;
 
 	template < typename... CheckTy >
 	concept IsNotVoid = std::is_void_v< CheckTy... > != true;
@@ -171,9 +167,8 @@ OutType ValueToEnum( InType InValue )
 	return static_cast< OutType >(InValue);
 }
 
-//----------------------------------------------------------------------
+
 // 스레드
-//----------------------------------------------------------------------
 namespace Rn::Thread
 {
 	enum class EThreadType

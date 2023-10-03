@@ -10,6 +10,7 @@
 
 namespace Rn
 {
+	// 엔진 설정 구조체
 	struct FEngineSetting
 	{
 		bool IsConsoleMode = false;
