@@ -94,7 +94,10 @@
         <ClInclude Include="Source\Core\System\Property\BaseProperty.h"/>
         <ClInclude Include="Source\Core\System\Property\Property.h"/>
         <ClInclude Include="Source\Core\System\Property\PropertyContainer.h"/>
+        <ClInclude Include="Source\Core\System\Serialize\Json\JsonSerializeContext.h"/>
         <ClInclude Include="Source\Core\System\Serialize\SerializeContext.h"/>
+        <ClInclude Include="Source\External\Json\json\json-forwards.h"/>
+        <ClInclude Include="Source\External\Json\json\json.h"/>
         <ClInclude Include="Source\Platform\Core\PlatformContext.h"/>
         <ClInclude Include="Source\Platform\Core\PlatformDefine.h"/>
         <ClInclude Include="Source\Platform\Windows\Resource.h"/>
@@ -109,7 +112,9 @@
         <ClCompile Include="Source\Core\Engine\RnEngine.cpp"/>
         <ClCompile Include="Source\Core\System\Property\BaseProperty.cpp"/>
         <ClCompile Include="Source\Core\System\Property\PropertyContainer.cpp"/>
+        <ClCompile Include="Source\Core\System\Serialize\Json\JsonSerializeContext.cpp"/>
         <ClCompile Include="Source\Core\System\Serialize\SerializeContext.cpp"/>
+        <ClCompile Include="Source\External\Json\jsoncpp.cpp"/>
         <ClCompile Include="Source\Platform\Windows\WindowsEntry.cpp"/>
         <ClCompile Include="Source\Platform\Windows\WindowsPlatformContext.cpp"/>
         <ClCompile Include="Source\Renderer\Core\RenderCore.cpp"/>

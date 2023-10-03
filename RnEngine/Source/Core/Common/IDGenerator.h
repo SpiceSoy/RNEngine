@@ -10,11 +10,8 @@
 
 namespace Rn
 {
-	//----------------------------------------------------------------------
-	//! @brief
-	//! @tparam
-	//----------------------------------------------------------------------
-	export template < typename Ty >
+	// ID 할당기
+	template < typename Ty >
 	class TIDGenerator
 	{
 	public:
@@ -27,28 +24,20 @@ namespace Rn
 		FObjIDType Cursor;
 
 	public:
-		//----------------------------------------------------------------------
-		//! @brief
-		//! @param InRangeStart
-		//! @param InRangeEnd
-		//----------------------------------------------------------------------
+		// 생성자
 		TIDGenerator( FObjIDType InRangeStart, FObjIDType InRangeEnd )
 			: RangeStart( InRangeStart ), RangeEnd( InRangeEnd )
 		{
+			Reset();
 		}
 
-		//----------------------------------------------------------------------
-		//! @brief
-		//----------------------------------------------------------------------
-		void Initialize()
+		// 커서를 초기화한다.
+		void Reset()
 		{
 			Cursor = RangeStart;
 		}
 
-		//----------------------------------------------------------------------
-		//! @brief
-		//! @return
-		//----------------------------------------------------------------------
+		// 아이디를 할당한다.
 		FObjIDType AllocateID()
 		{
 			FObjIDType result = Cursor;

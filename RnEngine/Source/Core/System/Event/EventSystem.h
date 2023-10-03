@@ -17,11 +17,9 @@ namespace Rn
 {
 	using FEventHandle = uint64;
 
-	//----------------------------------------------------------------------
-	//! @brief
-	//! @tparam
-	//----------------------------------------------------------------------
-	export template < typename Ty1 = void, typename Ty2 = void, typename Ty3 = void, typename Ty4 = void >
+
+	// 이벤트베이스
+	template < typename Ty1 = void, typename Ty2 = void, typename Ty3 = void, typename Ty4 = void >
 	class TBaseEvent : public IRnType
 	{
 		DECLARE_RN_TYPE( TBaseEvent )
@@ -40,12 +38,14 @@ namespace Rn
 		FEventHandle LastHandle = 0;
 
 	public:
+		// 이벤트를 추가한다.
 		template < typename Ty > requires Concept::IsSame< Ty, FFunctionType >
 		void AddEvent( Ty&& InFunctor )
 		{
 			while ( !AddEventByID( _GetNewId() ) );
 		}
 
+		// ID를 지정하여 이벤트를 추가한다.
 		template < typename Ty > requires Concept::IsSame< Ty, FFunctionType >
 		bool AddEventByID( FEventHandle InHandle, Ty&& InFunctor )
 		{
@@ -59,23 +59,27 @@ namespace Rn
 			return false;
 		}
 
+		// 클래스를 지정하여 이벤트를 추가한다.
 		template < typename ListenerTyPtr, typename Ty > requires Rn::Concept::IsSame< Ty, FFunctionType > && Rn::Concept::IsPointer< ListenerTyPtr >
 		void AddEventByClass( ListenerTyPtr Ptr, Ty&& InFunctor )
 		{
 			PtrDelegateMap[ Ptr ].emplace_back( InFunctor );
 		}
 
+		// 해당 핸들의 이벤트를 보유중인지 확인한다.
 		bool HasHandle( FEventHandle InHandle ) const
 		{
 			return HandleDelegateMap.contains( InHandle ) != 0;
 		}
 
+		// 해당 클래스의 이벤트를 보유중인지
 		template < typename ListenerTyPtr > requires Rn::Concept::IsPointer< ListenerTyPtr >
 		bool HasClass( ListenerTyPtr InPtr ) const
 		{
 			return PtrDelegateMap.contains( InPtr );
 		}
 
+		// 해당 핸들에 맞는 이벤트를 삭제한다.
 		void RemoveHandle( FEventHandle InHandle )
 		{
 			if ( HasHandle( InHandle ) )
@@ -84,6 +88,7 @@ namespace Rn
 			}
 		}
 
+		// 해당 클래스에 맞는 이벤트를 삭제한다.
 		template < typename ListenerTyPtr > requires Rn::Concept::IsPointer< ListenerTyPtr >
 		void RemoveClass( ListenerTyPtr InPtr )
 		{
@@ -94,7 +99,8 @@ namespace Rn
 		}
 
 	private:
-		FEventHandle _GetNewId()
+		// 새 아이디를 할당한다.
+		FEventHandle _GetNewID()
 		{
 			do
 			{

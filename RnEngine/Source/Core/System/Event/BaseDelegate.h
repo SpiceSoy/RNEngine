@@ -14,7 +14,7 @@
 
 namespace Rn
 {
-	//
+	// 베이스 델리게이트 인자 4개 선언
 	template < typename ReturnType, typename Ty1, typename Ty2, typename Ty3, typename Ty4 > requires Concept::IsNotVoids< Ty1, Ty2, Ty3, Ty4 >
 	class _BaseTDelegate
 	{
@@ -38,7 +38,7 @@ namespace Rn
 	};
 
 
-	//
+	// 베이스 델리게이트 인자 3개 선언
 	template < typename ReturnType, typename Ty1, typename Ty2, typename Ty3 > requires Concept::IsNotVoids< Ty1, Ty2, Ty3 >
 	class _BaseTDelegate< ReturnType, Ty1, Ty2, Ty3, void >
 	{
@@ -62,7 +62,7 @@ namespace Rn
 	};
 
 
-	//
+	// 베이스 델리게이트 인자 2개 선언
 	template < typename ReturnType, typename Ty1, typename Ty2 > requires Concept::IsNotVoids< Ty1, Ty2 >
 	class _BaseTDelegate< ReturnType, Ty1, Ty2, void, void >
 	{
@@ -86,7 +86,7 @@ namespace Rn
 	};
 
 
-	//
+	// 베이스 델리게이트 인자 1개 선언
 	template < typename ReturnType, typename Ty1 > requires Concept::IsNotVoid< Ty1 >
 	class _BaseTDelegate< ReturnType, Ty1, void, void, void >
 	{
@@ -110,7 +110,7 @@ namespace Rn
 	};
 
 
-	//
+	// 베이스 델리게이트 인자 없음 선언
 	template < typename ReturnType >
 	class _BaseTDelegate< ReturnType, void, void, void, void >
 	{
@@ -134,11 +134,8 @@ namespace Rn
 	};
 
 
-	//----------------------------------------------------------------------
-	//! @brief
-	//! @tparam
-	//----------------------------------------------------------------------
-	export template < typename ReturnType = void, typename Ty1 = void, typename Ty2 = void, typename Ty3 = void, typename Ty4 = void >
+	// 델리게이트
+	template < typename ReturnType = void, typename Ty1 = void, typename Ty2 = void, typename Ty3 = void, typename Ty4 = void >
 	class TBaseDelegate : public IRnType, public _BaseTDelegate< ReturnType, Ty1, Ty2, Ty3, Ty4 >
 	{
 		DECLARE_RN_TYPE( TBaseDelegate )

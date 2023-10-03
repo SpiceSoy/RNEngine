@@ -7,6 +7,8 @@
 // ================================================================================================
 
 #pragma once
+#include <string_view>
+
 
 namespace Rn
 {
@@ -19,10 +21,15 @@ namespace Rn
 {
 	class FBaseProperty
 	{
+	private:
+		std::wstring Name;
+
 	public:
-		FBaseProperty( FPropertyContainer* InContainer );
+		FBaseProperty( FPropertyContainer* InContainer, std::wstring_view InName );
 
 		virtual ~FBaseProperty() = default;
+
+		std::wstring_view GetName() const;
 
 		virtual void Serialize( ISerializeContext* InContext );
 

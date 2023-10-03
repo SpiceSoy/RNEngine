@@ -92,7 +92,7 @@ namespace Rn
 
 
 	// Ty타입에 대한 3D 벡터 클래스입니다.
-	export template < typename Ty >
+	template < typename Ty >
 	struct FVector3D
 	{
 		using ThisType = FVector3D< Ty >;
@@ -204,10 +204,10 @@ namespace Rn
 	using FVector3DU = FVector3D< uint32 >;
 
 	// float 타입에 대한 2D 벡터 클래스입니다.
-	using FVector2DS = FVector2D< single >;
+	using FVector2DF = FVector2D< float >;
 
 	// float 타입에 대한 3D 벡터 클래스입니다.
-	using FVector3DS = FVector3D< single >;
+	using FVector3DF = FVector3D< float >;
 
 	// double 타입에 대한 2D 벡터 클래스입니다.
 	using FVector2DD = FVector2D< double >;

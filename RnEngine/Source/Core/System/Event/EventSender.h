@@ -13,11 +13,8 @@
 
 namespace Rn
 {
-	//----------------------------------------------------------------------
-	//! @brief
-	//! @tparam
-	//----------------------------------------------------------------------
-	export template < typename Ty > requires Rn::Concept::IsRnType< Ty >
+	// 이벤트 발신자
+	template < typename Ty > requires Rn::Concept::IsRnType< Ty >
 	class TBaseEventSender : IRnType
 	{
 		DECLARE_RN_TYPE( TBaseEventSender<Ty> )
@@ -26,21 +23,13 @@ namespace Rn
 		std::set< Ty* > Listeners;
 
 	public:
-		//----------------------------------------------------------------------
-		//! @brief
-		//! @param InObject
-		//! @return
-		//----------------------------------------------------------------------
+		// 해당 이벤트 리스너가 등록되었는지 반환한다.
 		bool HasEventListener( const Ty& InObject ) const
 		{
 			return Listeners.contains( &InObject );
 		}
 
-		//----------------------------------------------------------------------
-		//! @brief
-		//! @param InObject
-		//! @return
-		//----------------------------------------------------------------------
+		// 이벤트 리스너를 등록한다.
 		void AddEventListener( const Ty& InObject )
 		{
 			if ( HasEventListener( InObject ) ) return;
@@ -48,10 +37,7 @@ namespace Rn
 			Listeners.insert( &InObject );
 		}
 
-		//----------------------------------------------------------------------
-		//! @brief
-		//! @param InObject
-		//----------------------------------------------------------------------
+		// 이벤트 리스너를 지운다.
 		void RemoveEventListener( const Ty& InObject )
 		{
 			if ( !HasEventListener( InObject ) ) return;
@@ -59,9 +45,7 @@ namespace Rn
 			Listeners.erase( &InObject );
 		}
 
-		//----------------------------------------------------------------------
-		//! @brief
-		//----------------------------------------------------------------------
+		// 이벤트를 트리거한다.
 		void NotifyEvent( void (Ty::*InFunctionPtr)() )
 		{
 			for ( Ty* ptr : Listeners )
@@ -72,9 +56,7 @@ namespace Rn
 			}
 		}
 
-		//----------------------------------------------------------------------
-		//! @brief
-		//----------------------------------------------------------------------
+		// 이벤트를 트리거한다.
 		template < typename... Tys >
 		void NotifyEvent( void (Ty::*InFunctionPtr)( Tys... ), Tys... InArgs )
 		{

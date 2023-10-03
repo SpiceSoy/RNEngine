@@ -11,6 +11,7 @@
 #include "Platform/Core/PlatformDefine.h"
 #include <string_view>
 
+
 // 타입 관련
 namespace Rn
 {
@@ -113,6 +114,7 @@ namespace Rn
 
 #define IMPLEMENT_RN_OBJECT( TYPE ) \
 	Rn::FClassName Rn::TClassName< TYPE >::_className = #TYPE;
+
 
 // 콘셉트
 namespace Rn::Concept
